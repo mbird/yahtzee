@@ -36,7 +36,14 @@ def score(hand):
 
     Returns an integer score 
     """
-    return 0
+    scores = {1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, 6 : 0}
+    
+    
+    print hand
+    for die in hand:
+        scores[die] += die
+    max_score = max(scores.values())
+    return max_score
 
 
 def expected_value(held_dice, num_die_sides, num_free_dice):
@@ -104,7 +111,7 @@ def run_example():
 #import poc_holds_testsuite
 #poc_holds_testsuite.run_suite(gen_all_holds)
                                        
-print roll()    
+print score(roll())   
     
 
 
